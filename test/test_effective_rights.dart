@@ -4,6 +4,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('gets the item effective rights', () async {
     final exchangeService = prepareExchangeService(primaryUserCredential);
     final sourceMessage = EmailMessage(exchangeService);

@@ -34,6 +34,8 @@ ExtendedPropertyDefinition CustomDateTime =
 );
 
 void main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('creates task with extended properties', () async {
     final service = prepareExchangeService(primaryUserCredential);
 

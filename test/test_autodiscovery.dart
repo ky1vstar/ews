@@ -4,6 +4,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('tests an autodiscovery', () async {
     final service =
         ExchangeService.withVersion(ExchangeVersion.Exchange2007_SP1)

@@ -5,6 +5,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('tests enabled trace', () async {
     final traceListener = MemoryTraceListener();
     final exchangeService = prepareExchangeService(primaryUserCredential)

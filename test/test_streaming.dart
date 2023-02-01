@@ -19,6 +19,9 @@ main() {
 
   setUp(() async {
     print("!!!!!!!!!!!!!!!!!!!!!!!! setUp");
+
+    await exchangeBasicToOAuthCredentials();
+
     completer = Completer<Iterable<NotificationEvent>>();
     final subscription = await service!.SubscribeToStreamingNotifications([
       FolderId.fromWellKnownFolder(WellKnownFolderName.Notes)

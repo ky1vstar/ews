@@ -6,6 +6,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 void main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('gets notes folder', () async {
     final service = prepareExchangeService(primaryUserCredential);
     final notesFolderId =

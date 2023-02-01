@@ -4,6 +4,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 void main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('uses the wrong credentials', () async {
     final service = prepareExchangeService(wrongUserCredential);
 

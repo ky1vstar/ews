@@ -4,6 +4,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('creates an appointment', () async {
     final service = prepareExchangeService(primaryUserCredential);
 

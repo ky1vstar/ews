@@ -4,6 +4,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('reads shared folder as reviewer', () async {
     final primaryExchangeService =
         prepareExchangeService(primaryUserCredential);
@@ -11,7 +13,7 @@ main() {
         prepareExchangeService(secondaryUserCredential);
 
     FolderPermission reviewerPermission = new FolderPermission.withSmtpAddress(
-        secondaryUserCredential.userName, FolderPermissionLevel.Reviewer);
+        secondaryUserName, FolderPermissionLevel.Reviewer);
 
     final primaryFolder = Folder(primaryExchangeService);
     primaryFolder.DisplayName = randomString().toString();

@@ -9,6 +9,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('searches contacts', () async {
     final exchangeService = prepareExchangeService(primaryUserCredential);
     final ContactsFolder contactsFolder =
@@ -49,7 +51,7 @@ main() {
   test('resolves name with contacts', () async {
     final exchangeService = prepareExchangeService(primaryUserCredential);
     await exchangeService.ResolveName(
-        secondaryUserCredential.userName.substring(0, 2),
+        secondaryUserName.substring(0, 2),
         null,
         ResolveNameSearchLocation.ContactsThenDirectory,
         true,
@@ -60,7 +62,7 @@ main() {
     final exchangeService = prepareExchangeService(
         primaryUserCredential, ExchangeVersion.Exchange2010_SP1);
     final response = await exchangeService.ResolveName(
-        secondaryUserCredential.userName,
+        secondaryUserName,
         null,
         ResolveNameSearchLocation.ContactsThenDirectory,
         true,

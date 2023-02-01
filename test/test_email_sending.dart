@@ -7,6 +7,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 void main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test("sends an email with an attachment", () async {
     final exchangeService = prepareExchangeService(primaryUserCredential);
     final message = EmailMessage(exchangeService)

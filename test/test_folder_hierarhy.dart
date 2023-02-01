@@ -10,6 +10,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('syncs folder hierarhy', () async {
     final service = prepareExchangeService(primaryUserCredential);
     ChangeCollection<FolderChange> fcc = await service.SyncFolderHierarchy(

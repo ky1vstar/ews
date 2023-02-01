@@ -4,6 +4,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 void main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('gets well known folders', () async {
     final service = prepareExchangeService(primaryUserCredential);
     await Folder.BindWithWellKnownFolder(service, WellKnownFolderName.Notes);

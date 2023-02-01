@@ -7,6 +7,8 @@ import 'package:test/test.dart';
 import '_shared.dart';
 
 void main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('gets the attachment list', () async {
     final service = prepareExchangeService(primaryUserCredential);
     final messageSubject = "test-${randomString()}";

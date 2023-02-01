@@ -6,6 +6,8 @@ import 'package:timezone/standalone.dart';
 import '_shared.dart';
 
 main() {
+  setUp(() async => exchangeBasicToOAuthCredentials());
+
   test('creates task', () async {
     final exchangeService = prepareExchangeService(primaryUserCredential);
 
